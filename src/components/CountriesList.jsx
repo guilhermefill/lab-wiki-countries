@@ -5,8 +5,8 @@ export default class CountriesList extends Component {
   render() {
     return (
       <div key={this.props.country.alpha3Code}>
-        <Link to={`${this.props.country.alpha3Code}`}>
-          <div className="card" style={{ width: '18rem' }}>
+        <div className="card" style={{ width: '18rem' }}>
+          <Link to={`${this.props.country.alpha3Code}`}>
             <div className="card-body">
               <img
                 src={`https://flagpedia.net/data/flags/icon/72x54/${this.props.country.alpha2Code.toLowerCase()}.png`}
@@ -14,8 +14,8 @@ export default class CountriesList extends Component {
               />
               <p>{this.props.country.name.common}</p>
             </div>
-          </div>
-        </Link>
+          </Link>
+        </div>
       </div>
     );
   }

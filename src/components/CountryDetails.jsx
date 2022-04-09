@@ -16,7 +16,7 @@ const CountryDetails = () => {
         setIsLoading(false);
       })
       .catch((error) => console.log(error));
-  }, []);
+  }, [id]);
 
   return (
     <div className="col">
