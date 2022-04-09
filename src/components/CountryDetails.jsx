@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const CountryDetails = () => {
@@ -19,7 +20,18 @@ const CountryDetails = () => {
 
   return (
     <div className="col">
-      {isLoading ? 'loading' : <p>{country.name.common}</p>}
+      {isLoading ? (
+        'loading'
+      ) : (
+        <div>
+          <img
+            src={`https://flagpedia.net/data/flags/icon/72x54/${country.alpha2Code.toLowerCase()}.png`}
+            alt={country.name.common}
+          />
+          <p>{country.name.common}</p>
+        </div>
+      )}
+      <Link to="/">Back To list</Link>
     </div>
   );
 };

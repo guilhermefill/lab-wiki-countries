@@ -29,12 +29,15 @@ function App() {
       <div className="container">
         <div className="row">
           <div className="col">
-            <div>
-              {countriesList.map((country) => {
-                return <CountriesList country={country} key={country.latlng} />;
-              })}
-            </div>
             <Routes>
+              <Route
+                path="/"
+                element={countriesList.map((country) => {
+                  return (
+                    <CountriesList country={country} key={country.latlng} />
+                  );
+                })}
+              />
               <Route path="/:id" element={<CountryDetails />} />
             </Routes>
           </div>
