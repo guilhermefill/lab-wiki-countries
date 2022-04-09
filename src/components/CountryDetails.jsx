@@ -29,6 +29,10 @@ const CountryDetails = () => {
             alt={country.name.common}
           />
           <p>{country.name.common}</p>
+          <p>
+            <em>{country.name.official}</em>
+          </p>
+          <p>Capital City: {Object.values(country.capital)}</p>
         </div>
       )}
       <Link to="/">Back To list</Link>
